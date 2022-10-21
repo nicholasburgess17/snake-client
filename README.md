@@ -8,8 +8,9 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["screenshot description"](https://imgur.com/a/9D5epuR)
-!["screenshot description"](#)
+!["Snek spawned"](https://imgur.com/1Aexatr)
+!["Trash Talking enabled 😎"](https://imgur.com/BaLV4u8)
+!["who's number 1?"](https://imgur.com/kEl3EeX)
 
 
 ## Getting Started
