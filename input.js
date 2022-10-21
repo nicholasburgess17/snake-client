@@ -12,6 +12,7 @@ const setupInput = function (conn) {
 };
 const handleUserInput = () => {
   stdin.on("data", (char) => {
+    //movement 
     if (char === "w") {
       connection.write("Move: up");
     }
@@ -24,9 +25,23 @@ const handleUserInput = () => {
     if (char === "d") {
       connection.write("Move: right");
     }
+    //force close out of game
     if (char === "\u0003") {
       process.exit();
     }
+    //send messages
+    if (char === "p") {
+      connection.write("Say: you stink!")
+    } 
+    if (char === "o") {
+      connection.write("Say: Nice try!")
+    } 
+    if (char === "i") {
+      connection.write("Say: haha!")
+    } 
+    if (char === "u") {
+      connection.write("Say: I'm #1")
+    } 
   });
 };
 module.exports = {
