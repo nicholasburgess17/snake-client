@@ -11,7 +11,7 @@ Before you can run this client, you will need to be running the server side whic
 !["Snek spawned"](./photos/snekOne.png)
 !["Trash Talking enabled 😎"](./photos/snekTwo.png)
 !["who's number 1?"](./photos/snekThree.png)
-!["time to play"](./photos/snekFour.webm)
+
 
 
 ## Getting Started
