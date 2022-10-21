@@ -1,5 +1,5 @@
 const { stdin } = require("process");
-const { say, move } = require("./constants")
+const { say, move } = require("./constants");
 let connection;
 
 const setupInput = function (conn) {
@@ -34,7 +34,7 @@ const handleUserInput = () => {
 
     //send messages
     if (char === "p") {
-      connection.write(say +  "you stink!");
+      connection.write(say + "you stink!");
     }
     if (char === "o") {
       connection.write(say + "Nice try!");
@@ -43,7 +43,7 @@ const handleUserInput = () => {
       connection.write(say + "haha!");
     }
     if (char === "u") {
-      connection.write(say +  "I'm #1");
+      connection.write(say + "I'm #1");
     }
   });
 };
