@@ -1,5 +1,6 @@
 const { stdin } = require("process");
 const { say, move } = require("./constants");
+
 let connection;
 
 const setupInput = function (conn) {
@@ -11,42 +12,48 @@ const setupInput = function (conn) {
   handleUserInput();
   return stdin;
 };
+
 //function to manage user input
 const handleUserInput = () => {
   stdin.on("data", (char) => {
     //movement
-    if (char === "w") {
-      connection.write(move + "up");
-    }
-    if (char === "a") {
-      connection.write(move + "left");
-    }
-    if (char === "s") {
-      connection.write(move + "down");
-    }
-    if (char === "d") {
-      connection.write(move + "right");
-    }
-    //force close out of game
-    if (char === "\u0003") {
-      process.exit();
-    }
+    switch (char) {
+      //basic movements
+      case "w": 
+      connection.write(move + "up")
+        break;
+      case "a":
+        connection.write(move + "left")
+        break;
+      case "s":
+        connection.write(move + "down")
+        break;
+      case "d":
+        connection.write(move + "right")
+        break;
 
-    //send messages
-    if (char === "p") {
-      connection.write(say + "you stink!");
+        //trash talk
+      case "p":
+        connection.write(say + "you stink!");
+        break;
+      case "o":
+        connection.write(say + "Nice try!")
+        break;
+      case "i":
+        connection.write(say + "haha!");
+        break;
+      case "u":
+        connection.write(say + "I'm #1")
+        break;
+
+        //get me out of here
+      case "\u0003":
+          process.exit();
+          break;
     }
-    if (char === "o") {
-      connection.write(say + "Nice try!");
-    }
-    if (char === "i") {
-      connection.write(say + "haha!");
-    }
-    if (char === "u") {
-      connection.write(say + "I'm #1");
-    }
-  });
-};
+});
+}
+
 module.exports = {
   setupInput,
 };
